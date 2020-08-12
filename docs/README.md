@@ -2,7 +2,7 @@
 home: true 
 heroImage: /logo.jpg # 头像
 heroImageStyle: {
-  maxHeight: '50px',
+  maxHeight: '100px',
   display: block,
   margin: 'auto',
   borderRadius: '50%',

@@ -41,7 +41,7 @@ module.exports = {
       },
       {
         text: '博客',
-        link: 'http://obkoro1.com/',
+        link: 'http://nidelemonya.cn/',
         icon: 'reco-blog'
       }, // 外部链接
       // 下拉列表
@@ -69,7 +69,7 @@ module.exports = {
     ],
     sidebar: { //   侧边栏配置
       // docs文件夹下面的accumulate文件夹 文档中md文件 书写的位置(命名随意)
-      '/Pages/': [
+      '/pages/': [
         {
           title: 'accumulate', // 一级菜单名称
           collapsable:true, // false为默认展开菜单， 默认值为true 折叠
@@ -91,6 +91,17 @@ module.exports = {
           ]
         },
       ]
+    }
+  },
+  // 博客配置
+  blogConfig: {
+    category: {
+      location: 2,     // 在导航栏菜单中所占的位置，默认2
+      text: 'Category' // 默认文案 “分类”
+    },
+    tag: {
+      location: 3,     // 在导航栏菜单中所占的位置，默认3
+      text: 'Tag'      // 默认文案 “标签”
     }
   }
 }
