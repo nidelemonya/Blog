@@ -3,7 +3,7 @@ title: async/await
 date: 2020-08-13
 sidebar: 'auto'
 categories:
- - js
+ - 笔记
 tags:
  - node
 publish: true

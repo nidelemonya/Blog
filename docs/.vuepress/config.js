@@ -1,6 +1,6 @@
 module.exports = {
   theme: 'reco',
-  title: '是你的lemon呀的',
+  title: '是你的lemon呀',
   description: `弃我去者，昨日之日不可留。乱我心者，今日之日多烦忧。`,
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
@@ -36,8 +36,8 @@ module.exports = {
     lastUpdated: 'Last Updated', // 文档更新时间：每个文件 git 最后提交的时间
     nav: [ //    导航栏配置
       {
-        text: '学习笔记',
-        link: '/pages/',
+        text: '笔记',
+        link: '/pages/note/h5/html5的语义元素.html',
         icon: 'reco-document'
       }, // 内部链接 以docs为根目录
       {
@@ -45,97 +45,54 @@ module.exports = {
         link: 'https://juejin.im/user/5dac2f786fb9a04e235779db',
         icon: 'reco-juejin'
       },
-      {
-        text: '博客',
-        link: 'http://nidelemonya.cn/',
-        icon: 'reco-blog'
-      }, 
       { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
       // 外部链接
       // 下拉列表
       {
         text: 'GitHub',
         icon: 'reco-github',
+        link: 'https://github.com/Bruce-shy/',
+      },
+      {
+        text: '项目展示',
+        icon:'reco-coding',
         items: [{
-            text: '全栈学习',
-            link: 'https://github.com/Bruce-shy/Lesson_bm'
-          },
-          {
-            text: '读书笔记',
-            link: 'https://github.com/Bruce-shy/Reading-notes'
-          },
-          {
-            text: 'React',
-            link: 'https://github.com/Bruce-shy/React'
-          },
-          {
-            text: 'Blog',
-            link: 'https://github.com/Bruce-shy/Blog'
-          },
-        ]
+          text: '即刻time',
+          link: 'http://nidelemonya.cn/build'
+        },
+      ]
       }
     ],
     sidebar: { //   侧边栏配置
       // docs文件夹下面的accumulate文件夹 文档中md文件 书写的位置(命名随意)
-      '/pages/': [
+      '/pages/note': [
         {
-          title: 'es6', // 一级菜单名称
-          collapsable:true, // false为默认展开菜单， 默认值为 true 折叠
+          title: 'html5', // 一级菜单名称
+          collapsable:false, // false为默认展开菜单， 默认值为 true 折叠
           sidebarDepth: 2,
           children: [
-            ['../pages/accumulate/JS/test.md','test'], // 以docs为根目录来查找文件 
             // 上面地址查找的是：docs>accumulate>JS>test.md 文件
             // 自动加.md 每个子选项的标题 是该md文件中的第一个h1/h2/h3标题
           ]
         },
         {
-          title: 'ajax', 
-          collapsable:false, 
+          title: 'css', 
+          collapsable:true, 
           sidebarDepth: 2,
           children: [
-            ['../pages/algorithm/simple/test.md','test']
+            ['../pages/note/css/position.md','position'],
+            ['../pages/note/css/z-index.md','z-index']
           ]
         },
         {
-          title: '手写代码', 
-          collapsable:false, 
+          title: 'js', 
+          collapsable:true, 
           sidebarDepth: 2,
           children: [
-            ['../pages/algorithm/simple/test.md','test']
+            ['../pages/note/js/async-await.md','async-await'], // 以docs为根目录来查找文件 
+            ['../pages/note/js/deep-clone.md','deep-clone']
           ]
-        },
-        {
-          title: '源码分析', 
-          collapsable:false, 
-          sidebarDepth: 2,
-          children: [
-            ['../pages/algorithm/simple/test.md','test']
-          ]
-        },
-        {
-          title: '计算机网络', 
-          collapsable:false, 
-          sidebarDepth: 2,
-          children: [
-            ['../pages/algorithm/simple/test.md','test']
-          ]
-        },
-        {
-          title: '工作流机制', 
-          collapsable:false, 
-          sidebarDepth: 2,
-          children: [
-            ['../pages/algorithm/simple/test.md','test']
-          ]
-        },
-        {
-          title: '手写代码', 
-          collapsable:false, 
-          sidebarDepth: 2,
-          children: [
-            ['../pages/algorithm/simple/test.md','test']
-          ]
-        },
+        }
       ]
     }
   },
@@ -155,7 +112,7 @@ module.exports = {
       "@vuepress-reco/vuepress-plugin-kan-ban-niang",
       {
         theme: ["shizuku"],
-        clean: true,
+        clean: false,
         modelStyle: {
           position: "fixed",
           left: "0px",
@@ -169,18 +126,8 @@ module.exports = {
       "cursor-effects",
       {
         size: 2,                    
-        shape: ['circle'],  
+        shape: ['star'],  
         zIndex: 999999999
-      }
-    ],
-    [
-      "dynamic-title",
-      {
-        showIcon: "/favicon.ico",
-        showText: "(/≧▽≦/)咦！又好了！",
-        hideIcon: "/favicon.ico",
-        hideText: "(●—●)喔哟，崩溃啦！",
-        recoverTime: 2000
       }
     ]
   ]

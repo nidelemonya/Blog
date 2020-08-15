@@ -9,7 +9,7 @@ heroImageStyle: {
   boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
 }
 actionText: 进来瞧瞧吧 →
-actionLink: /Pages/
+actionLink: /pages/
 features:
 - title: 简洁至上
   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
