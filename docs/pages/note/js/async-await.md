@@ -5,7 +5,7 @@ sidebar: 'auto'
 categories:
  - 笔记
 tags:
- - node
+ - Node
 publish: true
 ---
 ##  async/await：使用同步的方式去写异步代码

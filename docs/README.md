@@ -1,6 +1,10 @@
 ---
 home: true 
 heroImage: /logo.jpg # 头像
+# bgImage: '/bg.jpg'
+# bgImageStyle: {
+#   height: '650px'
+# }
 heroImageStyle: {
   maxHeight: '100px',
   display: block,

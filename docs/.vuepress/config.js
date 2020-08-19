@@ -1,7 +1,7 @@
 module.exports = {
   theme: 'reco',
   title: '是你的lemon呀',
-  description: `弃我去者，昨日之日不可留。乱我心者，今日之日多烦忧。`,
+  description: `蓬莱文章建安骨，中间小谢又清发`,
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
     ['link', {
@@ -37,7 +37,7 @@ module.exports = {
     nav: [ //    导航栏配置
       {
         text: '笔记',
-        link: '/pages/note/h5/html5的语义元素.html',
+        link: '/pages/note/h5/html5语义元素.html',
         icon: 'reco-document'
       }, // 内部链接 以docs为根目录
       {
@@ -57,7 +57,7 @@ module.exports = {
         text: '项目展示',
         icon:'reco-coding',
         items: [{
-          text: '即刻time',
+          text: 'jike-time',
           link: 'http://nidelemonya.cn/build'
         },
       ]
@@ -67,7 +67,18 @@ module.exports = {
       // docs文件夹下面的accumulate文件夹 文档中md文件 书写的位置(命名随意)
       '/pages/note': [
         {
-          title: 'html5', // 一级菜单名称
+          title: 'JavaScript', 
+          collapsable:true, 
+          sidebarDepth: 2,
+          children: [
+            ['../pages/note/js/inherit.md','继承与原型链'], // 以docs为根目录来查找文件 
+            ['../pages/note/js/instanceof.md','实现instanceof'],
+            ['../pages/note/js/async-await.md','async-await'],
+            ['../pages/note/js/deep-clone.md','deep-clone']
+          ]
+        },
+        {
+          title: 'H5', // 一级菜单名称
           collapsable:false, // false为默认展开菜单， 默认值为 true 折叠
           sidebarDepth: 2,
           children: [
@@ -82,15 +93,6 @@ module.exports = {
           children: [
             ['../pages/note/css/position.md','position'],
             ['../pages/note/css/z-index.md','z-index']
-          ]
-        },
-        {
-          title: 'js', 
-          collapsable:true, 
-          sidebarDepth: 2,
-          children: [
-            ['../pages/note/js/async-await.md','async-await'], // 以docs为根目录来查找文件 
-            ['../pages/note/js/deep-clone.md','deep-clone']
           ]
         }
       ]
@@ -112,10 +114,9 @@ module.exports = {
       "@vuepress-reco/vuepress-plugin-kan-ban-niang",
       {
         theme: ["shizuku"],
-        clean: false,
+        clean: true,
         modelStyle: {
-          position: "fixed",
-          left: "0px",
+          right: "30px",
           bottom: "0px",
           opacity: "0.9",
           zIndex: 99999
@@ -128,6 +129,34 @@ module.exports = {
         size: 2,                    
         shape: ['star'],  
         zIndex: 999999999
+      }
+    ],
+    [
+      "@vuepress-reco/vuepress-plugin-bgm-player",
+      {
+        audios: [
+          {
+            name: '告白之夜',
+            artist: 'Ayasa绚沙',
+            url: '/bgm/night.mp3',
+            cover: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2613879787,2147200089&fm=26&gp=0.jpg'
+          },
+          {
+            name: 'lemon',
+            artist: '米津玄师',
+            url: '/bgm/lemon.mp3',
+            cover: 'http://p1.music.126.net/6IeZ9MiSSDXifj74nzH6ww==/109951163561494000.jpg'
+          }
+        ],
+        position: { 
+          left: '10px', 
+          bottom: '10px', 
+          'z-index': '999999'
+        },
+        autoShrink: true,
+        shrinkMode: 'float',
+        floatPosition:'left',
+        floatStyle: { bottom: '200px', 'z-index': '999999' }
       }
     ]
   ]
