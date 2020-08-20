@@ -37,7 +37,7 @@ module.exports = {
     nav: [ //    导航栏配置
       {
         text: '笔记',
-        link: '/pages/note/h5/html5语义元素.html',
+        link: '/pages/note/js/inherit.html',
         icon: 'reco-document'
       }, // 内部链接 以docs为根目录
       {
@@ -87,11 +87,10 @@ module.exports = {
           ]
         },
         {
-          title: 'css', 
+          title: 'Css', 
           collapsable:true, 
           sidebarDepth: 2,
           children: [
-            ['../pages/note/css/position.md','position'],
             ['../pages/note/css/z-index.md','z-index']
           ]
         }

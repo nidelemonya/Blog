@@ -1,3 +1,14 @@
+---
+title: 实现instanceof
+date: 2020-08-19
+sidebar: 'auto'
+categories:
+ - 笔记
+tags:
+ - Js
+ - 继承
+publish: true
+---
 ## 实现 instanceof
 
 ### instanceof 原理
@@ -35,25 +46,3 @@ function instance_of(L, R) {
     }
 }
 ```
-
-\---
-
-title: 实现instanceof
-
-date: 2020-08-19
-
-sidebar: 'auto'
-
-categories:
-
- \- 笔记
-
-tags:
-
- \- Js
-
- \- 继承
-
-publish: true
-
-\---

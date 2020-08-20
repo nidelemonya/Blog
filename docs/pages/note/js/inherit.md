@@ -1,10 +1,29 @@
+---
+title: 继承与原型链
+date: 2020-08-19
+sidebar: 'auto'
+categories:
+ - 笔记
+tags:
+ - Js
+ - 继承
+publish: true
+---
 ## 继承与原型链
 
 JavaScript 在 es6 中引入了 class 关键字，但那只是语法糖， JavaScript 仍然是**基于原型**的。
 
-JavaScript 只有一种解构：对象。 每个实例对象(object) 都有一个私有属性(称为_proto__ ) 指向它的构造函数的原型对象 (prototype)。该原型对象也有一个自己的原型对象(_proto__ ), 层层向上直到一个对象的原型对象为 null。 根据定义， null 没有原型，作为原型链的终点。
+JavaScript 只有一种结构：对象。 每个实例对象(object) 都有一个私有属性(称为`__proto__` ) 指向它的构造函数的原型对象 (prototype)。该原型对象也有一个自己的原型对象(`__proto__` ), 层层向上直到一个对象的原型对象为 null。 根据定义， null 没有原型，作为原型链的终点。
 
 几乎所有的 JavaScript 中的对象都是位于原型链顶端的object的实例。
+
+### 拓展
+
+obj.[[Prototype]] 用于指向 obj 的原型
+
+[[Prototype]] 从es6开始可以通过 Object.getPrototypeOf() 和 Object.setPrototypeOf() 来访问，等同于 `__proto__`。
+
+不应与 构造函数 func 的 prototype 相混淆。被构造函数创建的实例对象的[[Prototype]] 指向 func 的 prototype 属性。
 
 ## 基于原型链的继承
 
@@ -20,7 +39,7 @@ JavaScript对象有一个指向一个原型对象的链。当试图访问一个�
 
 #### 使用 Object.create 创建的对象
 
-object.create()。可以调用这个方法来创建一个新对象。**新对象的原型**就是调用create方法时传入的第一个参数。即使用现有的对象来提供新创建对象的_proto__。
+object.create()。可以调用这个方法来创建一个新对象。**新对象的原型**就是调用create方法时传入的第一个参数。即使用现有的对象来提供新创建对象的`__proto__`。
 
 #### 使用 class 关键字创建的对象
 
@@ -93,7 +112,7 @@ ParentConstructor.call(this, name) 父级构造函数的this指向Cat的实例�
 通过原型链修改
 
 1. Object.setPrototypeOf(Cat.prototype, ParentConstructor.prototype)
-2. Cat.prototype._proto__ *=* ParentConstructor.prototype
+2. Cat.prototype.`__proto__` *=* ParentConstructor.prototype
 
 例子：
 
@@ -111,26 +130,3 @@ Child.prototype.__proto__ === Foo.prototype // true
 Foo.prototype.__proto__ === Object.prototype // true
 Object.prototype.__proto__ === null // true
 ```
-
-\---
-
-title: 继承与原型链
-
-date: 2020-08-19
-
-sidebar: 'auto'
-
-categories:
-
- \- 笔记
-
-tags:
-
- \- Js
-
- \- 继承
-
-publish: true
-
-\---
-

@@ -11,6 +11,7 @@
   "author": "Bruce-shy <zhouzihan341308@163.com>",
   "license": "MIT",
   "devDependencies": {
+    "@vuepress-reco/vuepress-plugin-bgm-player": "^1.1.3",
     "@vuepress-reco/vuepress-plugin-kan-ban-niang": "^1.0.5",
     "vuepress": "^1.5.2",
     "vuepress-plugin-cursor-effects": "^1.0.0",
