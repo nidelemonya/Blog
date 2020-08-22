@@ -130,3 +130,26 @@ Child.prototype.__proto__ === Foo.prototype // true
 Foo.prototype.__proto__ === Object.prototype // true
 Object.prototype.__proto__ === null // true
 ```
+
+### 拓展
+
+Object.setPrototypeOf() 方法设置一个指定的对象的原型(即内部[[Prototype]]属性) 到另一个对象或null(存在性能问题 慎用)
+
+##### 语法
+
+```js
+Object.setPrototypeOf(obj, prototype)
+// obj 指要设置原型的对象
+// 该对象新的原型
+```
+
+Object.getPrototype() 方法返回指定对象的原型 (内部 [[Prototype]] 属性的值)
+
+##### 语法
+
+```js
+Object.getPrototypeOf(obj)
+// obj 要返回其原型的对象
+```
+
+返回给定对象的原型，如果没用继承属性，返回 null

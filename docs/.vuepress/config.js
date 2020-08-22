@@ -71,14 +71,20 @@ module.exports = {
           collapsable:true, 
           sidebarDepth: 2,
           children: [
+            ['../pages/note/js/async-await.md','async-await'],
+            ['../pages/note/js/debounce.md','防抖'],
+            ['../pages/note/js/deep-clone.md','深克隆'],
             ['../pages/note/js/inherit.md','继承与原型链'], // 以docs为根目录来查找文件 
             ['../pages/note/js/instanceof.md','实现instanceof'],
-            ['../pages/note/js/async-await.md','async-await'],
-            ['../pages/note/js/deep-clone.md','deep-clone']
+            ['../pages/note/js/new.md','请你实现一个new'],
+            ['../pages/note/js/object.create.md','实现object.create'],
+            ['../pages/note/js/promise.md','Promise'],
+            ['../pages/note/js/this.md','this'],
+            ['../pages/note/js/throttle.md','节流'],
           ]
         },
         {
-          title: 'H5', // 一级菜单名称
+          title: 'Html5', // 一级菜单名称
           collapsable:false, // false为默认展开菜单， 默认值为 true 折叠
           sidebarDepth: 2,
           children: [
@@ -155,7 +161,7 @@ module.exports = {
         autoShrink: true,
         shrinkMode: 'float',
         floatPosition:'left',
-        floatStyle: { bottom: '200px', 'z-index': '999999' }
+        floatStyle: { bottom: '100px', 'z-index': '999999' }
       }
     ]
   ]
