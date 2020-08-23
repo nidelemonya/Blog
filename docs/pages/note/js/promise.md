@@ -28,7 +28,7 @@ Promise 有以下几种状态
 
 只要这两种情况发生， 状态就凝固了， 不会再变了。
 
-	### 约定
+### 约定
 
 - 在本轮事件循环运行完成之前， 回调函数是不会被调用的。
 - 即使异步操作已经完成 (成功或失败)， 在这之后通过 then() 添加的回调函数也会被调用
@@ -56,7 +56,6 @@ Promise.all() 和 Promise.race() 是并行运行两个异步操作的两个组�
         this.value = undefined; // 传递 resolve 完成的结果 放在 this 上以便于 其他函数 都能访问到
         this.status = PENDING // 默认状态
         this.onFulfilled = () => {}; // 成功时候的回调
-        this.onRejected = () => {}; // 失败时候的回调
         let self = this; // 防止 this 丢失
 
         function resolve(value) {
@@ -66,11 +65,7 @@ Promise.all() 和 Promise.race() 是并行运行两个异步操作的两个组�
             // console.log(value);
         }
 
-        function reject(value) {
-            self.value = value;
-            self.status = REJECTED; // 调用 reject 表明失败
-            self.onRejected(value);
-        }
+        function reject(value) {}
         fn(resolve, reject)
     }
     MyPromise.prototype.then = function (onFulfilled, onRejected) {
@@ -78,21 +73,17 @@ Promise.all() 和 Promise.race() 是并行运行两个异步操作的两个组�
         if (this.status === FULFILLED) onFulfilled(this.value)
         else if (this.status === PENDING) {
             this.onFulfilled = onFulfilled; // onFulfilled 赋给 构造函数成功时的回调
-        } else {
-            this.onRejected = onRejected;
-        }
+        } else onRejected()
+
     }
 
     // 测试
     new MyPromise((resolve, reject) => {
             setTimeout(() => {
-                reject(2) // this 指向哪 看在哪里调用 普通调用 指向 window
+                resolve(1) // this 指向哪 看在哪里调用 普通调用 指向 window
             }, 2000)
         })
         .then((res) => {
             console.log(res)
         }, () => {})
 ```
-
-
-
