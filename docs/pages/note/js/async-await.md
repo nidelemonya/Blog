@@ -31,5 +31,18 @@ async/await 使用了 Generator 和 Promise 两种技术
 ### await
 async 函数返回的是一个 Promise 对象
 
+## async 的一些讨论
+
+### async 会取代 Generator 吗？
+
+在异步方面， async 可以取代 Generator  ， 但是 async 和 Generator  两个语法本身是用来解决不同的问题的。
+
+### async 会取代 Promise 吗 ？
+
+1. async 函数也会返回一个 Promise 对象
+2. 面对复杂的异步流程， Promise 提供的 all 和 race 会更加好用
+3. Promise 本身是一个对象， 所以可以在代码中任意传递
+4. async 支持率目前还很低。
+
 ## 总结
 使用 async/await 可以实现用同步代码的风格来编写异步代码，这是因为 async/await 的基础技术使用了生成器和 Promise，生成器是协程的实现，利用生成器能实现生成器函数的暂停和恢复。

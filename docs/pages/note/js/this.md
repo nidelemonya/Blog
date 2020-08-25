@@ -71,3 +71,56 @@ this 指当前执行上下文的一个属性， 在非严格模式下， 总是�
 5. 严格模式：this 指向 undefined
 6. 箭头函数 看函数在哪里定义的，this 看外层函数
 7. 严格模式（在函数内部 且没用设置 this的值）： this 指向 undefined
+
+### 拓展
+
+#### 实现一个 call
+
+call 做了什么：
+
+- 将函数设为对象的属性
+- 执行&删除这个函数
+- 指定 this 到 函数并传入给定参数执行函数
+- 如果不传参数， 默认指向为 window
+
+```js
+// 实现一个 call 方法：
+Function.prototype.myCall = function(context) {
+    context = context ? Object(context) : window;
+    context.fn = this;
+    
+    let args = [...arguments].slice(1);
+    let result = context.fn(...args);
+    
+    delete context.fn;
+    return result;
+}
+```
+
+#### 实现一个 apply
+
+apply 原理和 call 很相似 但是第二个传的参数不同 (apply 传的参数第二个是数组)
+
+```js
+Function.prototype.myapply = function(context, arr) {
+    var context = Object(context) || window;
+    context.fn = this;
+    
+    var result;
+    if (!arr) {
+        result = context.fn()
+    }else {
+        result = context.fn(...arr)
+    }
+    delete context.fn
+    return result
+}
+```
+
+#### 总结
+
+call() 和 apply() 区别
+
+- call() 方法分别接受参数。
+
+- apply 方法接受数组形式的参数。

@@ -28,6 +28,32 @@ Promise 有以下几种状态
 
 只要这两种情况发生， 状态就凝固了， 不会再变了。
 
+### Promise 的优缺点
+
+#### 优点
+
+1. 防止回调嵌套，回调地狱
+2. 链式调用。
+
+#### 缺点
+
+ 1. `.then` 实际上也是返回一个promise， 多次调用消耗性能。
+
+ 2. `Promise` 一旦创建它就会立即执行，无法中途取消。
+
+ 3. 当 Promise 处于 pending 状态时，无法确定它是成功还是失败。
+
+ 4. 如果不设置回调函数，Promise 内部的错误就不会反映到外部
+
+    ```js
+    let promise = new Promise(() => {
+        throw new Error('error')
+    });
+    console.log(2333333);
+    ```
+
+    通常称为 '吃掉错误'。
+
 ### 约定
 
 - 在本轮事件循环运行完成之前， 回调函数是不会被调用的。
@@ -47,7 +73,7 @@ Promise.all() 和 Promise.race() 是并行运行两个异步操作的两个组�
 ### 手写 Promise
 
 ```js
-    // 三种状态
+    // 三种状态：PENDING、FULFILLED、REJECTED
     const PENDING = Symbol('PENDING')
     const FULFILLED = Symbol('FULFILLED')
     const REJECTED = Symbol('REJECTED')
@@ -74,7 +100,6 @@ Promise.all() 和 Promise.race() 是并行运行两个异步操作的两个组�
         else if (this.status === PENDING) {
             this.onFulfilled = onFulfilled; // onFulfilled 赋给 构造函数成功时的回调
         } else onRejected()
-
     }
 
     // 测试

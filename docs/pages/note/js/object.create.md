@@ -24,3 +24,12 @@ function _create(proto) {
 ```
 
 可以用来实现 类式继承
+
+### 实现 JSON.parse
+
+```js
+var json = '{"name": "cxk", "age": 25}'
+var obj = eval("(" + json + ")")
+```
+
+此方法属于黑魔法，极易被 xss 攻击。

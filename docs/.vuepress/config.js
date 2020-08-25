@@ -72,7 +72,7 @@ module.exports = {
           sidebarDepth: 2,
           children: [
             ['../pages/note/js/async-await.md','async-await'],
-            ['../pages/note/js/debounce.md','防抖'],
+            ['../pages/note/js/防抖和节流.md','防抖和节流'],
             ['../pages/note/js/deep-clone.md','深克隆'],
             ['../pages/note/js/inherit.md','继承与原型链'], // 以docs为根目录来查找文件 
             ['../pages/note/js/instanceof.md','实现instanceof'],
@@ -80,7 +80,7 @@ module.exports = {
             ['../pages/note/js/object.create.md','实现object.create'],
             ['../pages/note/js/promise.md','Promise'],
             ['../pages/note/js/this.md','this'],
-            ['../pages/note/js/throttle.md','节流'],
+            ['../pages/note/js/箭头函数和普通函数的区别.md','箭头函数和普通函数的区别'],
           ]
         },
         {
