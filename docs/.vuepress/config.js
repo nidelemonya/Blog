@@ -31,7 +31,7 @@ module.exports = {
     // 项目开始时间，只填写年份
     startYear: '2020',
     noFoundPageByTencent: false,
-    codeTheme: 'solarizedlight', // default 'tomorrow'
+    codeTheme: 'okaidia', // default 'tomorrow'
     sidebarDepth: 2, // e'b将同时提取markdown中 h2 和 h3 标题，显示在侧边栏上。
     lastUpdated: 'Last Updated', // 文档更新时间：每个文件 git 最后提交的时间
     nav: [ //    导航栏配置
