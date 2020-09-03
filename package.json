@@ -5,7 +5,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "d": "bash deploy.sh"
+    "deploy": "bash deploy.sh"
   },
   "repository": "https://github.com/Bruce-shy/Blog.git",
   "author": "Bruce-shy <zhouzihan341308@163.com>",
