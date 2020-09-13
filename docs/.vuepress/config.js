@@ -27,7 +27,7 @@ module.exports = {
     authorAvatar: '/logo.jpg',
     // 备案
     record: '赣ICP备20009270号',
-    recordLink: 'http://www.beian.miit.gov.cn/',
+    recordLink: 'https://beian.miit.gov.cn/',
     // 项目开始时间，只填写年份
     startYear: '2020',
     noFoundPageByTencent: false,
@@ -84,12 +84,11 @@ module.exports = {
           ]
         },
         {
-          title: 'Html5', // 一级菜单名称
-          collapsable:false, // false为默认展开菜单， 默认值为 true 折叠
+          title: '计算机网络', 
+          collapsable:true, 
           sidebarDepth: 2,
           children: [
-            // 上面地址查找的是：docs>accumulate>JS>test.md 文件
-            // 自动加.md 每个子选项的标题 是该md文件中的第一个h1/h2/h3标题
+            ['../pages/note/计算机网络/Http协议.md','Http协议']
           ]
         },
         {
@@ -97,7 +96,7 @@ module.exports = {
           collapsable:true, 
           sidebarDepth: 2,
           children: [
-            ['../pages/note/css/z-index.md','z-index']
+            ['../pages/note/Css/Css.md','Css']
           ]
         }
       ]

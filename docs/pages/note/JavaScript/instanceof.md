@@ -19,7 +19,7 @@ obj instanceof Constructor
 
 就是判断 左边这个对象(obj) 它的原型链上面 有没有出现过Constructor.prototype 这个对象
 
-查找左边这个对象的原型链， 看原型链上有没有出现过 Constructor.prototype  这个对象， 如果出现了 返回 true 如果一直找到原型链的顶端都还没找到 返回false
+查找左边这个对象的原型链， 看原型链上有没有出现过 Constructor.prototype  这个对象， 如果出现了 返回 true,  如果一直找到原型链的顶端都还没找到, 返回false
 
 #### 鸡和蛋问题
 

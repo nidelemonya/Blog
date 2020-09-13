@@ -13,6 +13,8 @@ publish: true
 
 ### 浅拷贝
 
+浅拷贝 只能拷贝基本类型的数据，对于引用类型的数据，只会拷贝他们的引用地址，拷贝后的对象仍然指向同一份地址，当我们拷贝后对象的引用类型数据发生改变时，原对象也会跟着改变。
+
 浅拷贝中对象只会被克隆最外面的一层，至于更深层的对象，依然是通过引用指向同一块堆内存。
 
 代码
@@ -26,7 +28,22 @@ function shallowClone(o) {
 }
 ```
 
-api: Object.assign 也可以实现浅复制
+API: Object.assign 也可以实现浅复制(针对深拷贝，需要使用其他办法，因为 `Object.assign()`拷贝的是（可枚举）属性值。假如源值是一个对象的引用，它仅仅会复制其引用值。)
+
+```js
+    let obj1 = { a: 0, b: {c :0}}
+    let obj2 = Object.assign({}, obj1);
+
+    console.log(JSON.stringify(obj1))
+    console.log(JSON.stringify(obj2))
+    
+    obj1.b.c = 3;
+    obj1.b.d = 1
+    console.log(JSON.stringify(obj1))
+    console.log(JSON.stringify(obj2))
+```
+
+
 
 ### 深拷贝
 

@@ -13,7 +13,7 @@ publish: true
 
 JavaScript 在 es6 中引入了 class 关键字，但那只是语法糖， JavaScript 仍然是**基于原型**的。
 
-JavaScript 只有一种结构：对象。 每个实例对象(object) 都有一个私有属性(称为`__proto__` ) 指向它的构造函数的原型对象 (prototype)。该原型对象也有一个自己的原型对象(`__proto__` ), 层层向上直到一个对象的原型对象为 null。 根据定义， null 没有原型，作为原型链的终点。
+当谈到继承时，JavaScript 只有一种结构：对象。 每个实例对象(object) 都有一个私有属性(称为`__proto__` ) 指向它的构造函数的原型对象 (prototype)。该原型对象也有一个自己的原型对象(`__proto__` ), 层层向上直到一个对象的原型对象为 null。 根据定义， null 没有原型，作为原型链的终点。
 
 几乎所有的 JavaScript 中的对象都是位于原型链顶端的object的实例。
 
@@ -26,6 +26,12 @@ obj.[[Prototype]] 用于指向 obj 的原型
 不应与 构造函数 func 的 prototype 相混淆。被构造函数创建的实例对象的[[Prototype]] 指向 func 的 prototype 属性。
 
 ## 基于原型链的继承
+
+```js
+Object.setPrototypeOf(Child.prototype, Parent.prototype);
+
+Child.prototype.__proto__ = Parent.prototype;
+```
 
 ### 继承属性
 
