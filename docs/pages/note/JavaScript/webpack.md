@@ -21,7 +21,27 @@
 - sass-loader 处理sass。
 - postcss-loader 用postcss来处理CSS。
 - file-loader 一般用来处理图片 转换成 base64。
-- babel-loader 把 ES6 转换成 ES5。
+- babel-loader 有一些浏览器不能兼容 es6 语法，babel-loader 通过把 ES6 转换成 ES5，适配成浏览器兼容的代码。
+
+### 手写过哪些loader？
+
+手写过一个 md-loader，vue-loader，他们的本质都是将对应格式的代码转换为 jsx然后交给我们的babel-loader做处理。比如说我们的md-loader的实现，首先我们在webpack.config.js 配置文件中的 module下面的rules中加入一条配置，匹配以 .md为结尾的正则表达式，使用我们自己定义的md-loader，
+
+在md-loader.js 中，导出一个函数，参数 sourece 是我们接受的 源文件的内容。
+
+```js
+module.exports = function(source) {
+	return `
+    import Markdown from 'markdown-to-jsx';
+    import React from 'react';
+    export default function Post() {
+        return React.createElement(Markdown, {}, \`${source}\`)
+		//注意： 加 `` 转成字符串 因为里面嵌套 需要转义 
+    }
+}
+```
+
+我们只需要引入 markdown-to-jsx 这个包，在使用 React.createElement(component, props, ...children) 方法即可。
 
 ### 构建流程
 
