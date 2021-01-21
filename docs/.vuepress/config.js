@@ -1,7 +1,7 @@
 module.exports = {
   theme: 'reco',
   title: '是你的lemon呀',
-  description: `蓬莱文章建安骨，中间小谢又清发`,
+  description: `欢迎来到我的 blog`,
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
     ['link', {
@@ -71,16 +71,16 @@ module.exports = {
           collapsable:true, 
           sidebarDepth: 2,
           children: [
-            ['../pages/note/js/async-await.md','async-await'],
-            ['../pages/note/js/防抖和节流.md','防抖和节流'],
-            ['../pages/note/js/deep-clone.md','深克隆'],
-            ['../pages/note/js/继承与原型链.md','继承与原型链'], // 以docs为根目录来查找文件 
-            ['../pages/note/js/instanceof.md','实现instanceof'],
-            ['../pages/note/js/new.md','请你实现一个new'],
-            ['../pages/note/js/object.create.md','实现object.create'],
-            ['../pages/note/js/promise.md','Promise'],
-            ['../pages/note/js/this.md','this'],
-            ['../pages/note/js/箭头函数和普通函数的区别.md','箭头函数和普通函数的区别'],
+            ['../pages/note/JavaScript/async-await.md','async-await'],
+            ['../pages/note/JavaScript/防抖和节流.md','防抖和节流'],
+            ['../pages/note/JavaScript/deep-clone.md','深克隆'],
+            ['../pages/note/JavaScript/继承与原型链.md','继承与原型链'], // 以docs为根目录来查找文件 
+            ['../pages/note/JavaScript/instanceof.md','实现instanceof'],
+            ['../pages/note/JavaScript/new.md','请你实现一个new'],
+            ['../pages/note/JavaScript/object.create.md','实现object.create'],
+            ['../pages/note/JavaScript/Promise.md','Promise'],
+            ['../pages/note/JavaScript/this.md','this'],
+            ['../pages/note/JavaScript/箭头函数和普通函数的区别.md','箭头函数和普通函数的区别'],
           ]
         },
         {
@@ -88,7 +88,8 @@ module.exports = {
           collapsable:true, 
           sidebarDepth: 2,
           children: [
-            ['../pages/note/计算机网络/Http协议.md','Http协议']
+            ['../pages/note/计算机网络/Http协议.md','Http协议'],
+            ['../pages/note/计算机网络/Http缓存.md','Http缓存']
           ]
         },
         {
@@ -114,19 +115,19 @@ module.exports = {
     }
   },
   plugins: [
-    [
-      "@vuepress-reco/vuepress-plugin-kan-ban-niang",
-      {
-        theme: ["shizuku"],
-        clean: true,
-        modelStyle: {
-          right: "30px",
-          bottom: "0px",
-          opacity: "0.9",
-          zIndex: 99999
-        }
-      }
-    ],
+    // [
+    //   "@vuepress-reco/vuepress-plugin-kan-ban-niang",
+    //   {
+    //     theme: ["shizuku"],
+    //     clean: true,
+    //     modelStyle: {
+    //       right: "30px",
+    //       bottom: "0px",
+    //       opacity: "0.9",
+    //       zIndex: 99999
+    //     }
+    //   }
+    // ],
     [
       "cursor-effects",
       {
@@ -135,33 +136,33 @@ module.exports = {
         zIndex: 999999999
       }
     ],
-    [
-      "@vuepress-reco/vuepress-plugin-bgm-player",
-      {
-        audios: [
-          {
-            name: '告白之夜',
-            artist: 'Ayasa绚沙',
-            url: '/bgm/night.mp3',
-            cover: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2613879787,2147200089&fm=26&gp=0.jpg'
-          },
-          {
-            name: 'lemon',
-            artist: '米津玄师',
-            url: '/bgm/lemon.mp3',
-            cover: 'http://p1.music.126.net/6IeZ9MiSSDXifj74nzH6ww==/109951163561494000.jpg'
-          }
-        ],
-        position: { 
-          left: '10px', 
-          bottom: '10px', 
-          'z-index': '999999'
-        },
-        autoShrink: true,
-        shrinkMode: 'float',
-        floatPosition:'left',
-        floatStyle: { bottom: '100px', 'z-index': '999999' }
-      }
-    ]
+  //   [
+  //     "@vuepress-reco/vuepress-plugin-bgm-player",
+  //     {
+  //       audios: [
+  //         {
+  //           name: '告白之夜',
+  //           artist: 'Ayasa绚沙',
+  //           url: '/bgm/night.mp3',
+  //           cover: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2613879787,2147200089&fm=26&gp=0.jpg'
+  //         },
+  //         {
+  //           name: 'lemon',
+  //           artist: '米津玄师',
+  //           url: '/bgm/lemon.mp3',
+  //           cover: 'http://p1.music.126.net/6IeZ9MiSSDXifj74nzH6ww==/109951163561494000.jpg'
+  //         }
+  //       ],
+  //       position: { 
+  //         left: '10px', 
+  //         bottom: '10px', 
+  //         'z-index': '999999'
+  //       },
+  //       autoShrink: true,
+  //       shrinkMode: 'float',
+  //       floatPosition:'left',
+  //       floatStyle: { bottom: '100px', 'z-index': '999999' }
+  //     }
+  //   ]
   ]
 }

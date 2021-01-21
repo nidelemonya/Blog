@@ -51,8 +51,8 @@ GET、POST、HEAD、PUT、DELETE、OPTIONS
 GET 请求数据，把参数包含在URL中。
 POST 提交数据，通过request body (请求体) 传递参数 
 
-从协议本身来说， 并没有限制 GET 传递参数不能放到 body, POST 传递参数也可以放到 querstring。
-相对于来说 POST 比 GET 更安全一些，但是两种本质上来说都是不安全的，因为http是明文传输的，应该使用https。
+从协议本身来说， 并没有限制 GET 传递参数不能放到request body, POST 传递参数也可以放到 query_string。
+相对于来说 POST 比 GET 更安全一些，但是两种本质上来说都是不安全的，因为http是j基于明文传输的，我们应该使用https。
 
 重大区别：GET产生一个TCP数据包；POST产生两个TCP数据包。
 

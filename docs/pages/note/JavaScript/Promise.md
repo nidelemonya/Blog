@@ -13,12 +13,12 @@ publish: true
 
 ### 什么是 Promise
 
-Promise 对象用于表示一个异步操作的最终完成(或失败)，及其结果值。
+Promise 对象用于表示一个异步操作的最终完成(成功或失败)，及其结果值。
 
 Promise 有以下几种状态
 
 - pending：初始状态，既不是成功，也不是失败。
-- fulfilled：意味着操作成功完成。
+- fulfilled：意味着操作成功。
 - rejected：意味着操作失败。
 
 默认：
@@ -37,7 +37,7 @@ Promise 有以下几种状态
 
 #### 缺点
 
- 1. `.then` 实际上也是返回一个promise， 多次调用消耗性能。
+ 1. `.then` 实际上也是返回一个promise， 多次调用`.then`的话可能会消耗性能。
 
  2. `Promise` 一旦创建它就会立即执行，无法中途取消。
 
