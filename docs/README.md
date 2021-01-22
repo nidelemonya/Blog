@@ -1,6 +1,6 @@
 ---
 home: true 
-heroImage: /logo.jpg # 头像
+heroImage: /logo.jpeg # 头像
 # bgImage: '/bg.jpg'
 # bgImageStyle: {
 #   height: '350px',

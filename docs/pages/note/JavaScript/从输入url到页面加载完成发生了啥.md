@@ -12,7 +12,7 @@
 
 ### 完整流程
 
-![从输入 URL 到页面展示完整流程示意图](E:\Blog\docs\.vuepress\public\渲染流程.png)
+![从输入 URL 到页面展示完整流程示意图](https:nidelemonya.cn/渲染流程.png)
 
 **整个过程需要各个进程之间的配合**，大致描述为如下：
 
