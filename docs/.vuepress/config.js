@@ -107,12 +107,36 @@ module.exports = {
             ['../pages/note/Css/Css.md','Css'],
           ]
         },
+        // {
+        //   title: '面经', 
+        //   collapsable:true, 
+        //   sidebarDepth: 2,
+        //   children: [
+        //     ['../pages/note/面经/子寒-面经.md','子寒-面经'],
+        //   ]
+        // }
         {
-          title: '面经', 
+          title: '算法', 
           collapsable:true, 
           sidebarDepth: 2,
           children: [
-            ['../pages/note/面经/子寒-面经.md','子寒-面经'],
+            ['../pages/note/算法/数组.md','数组'],
+          ]
+        },
+        {
+          title: '框架', 
+          collapsable:true, 
+          sidebarDepth: 2,
+          children: [
+            ['../pages/note/框架/React.md','React'],
+          ]
+        },
+        {
+          title: '操作系统', 
+          collapsable:true, 
+          sidebarDepth: 2,
+          children: [
+            ['../pages/note/操作系统/计算机操作系统.md','计算机操作系统'],
           ]
         }
       ]
